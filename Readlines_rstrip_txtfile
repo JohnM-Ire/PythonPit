@@ -1,0 +1,35 @@
+import os
+
+def main():
+
+    #to read file with readlines, reads all lines and returns them as a list of strings
+    
+    #getting current working dir
+    
+    working_directory = os.getcwd()
+    print(working_directory)
+
+    #open file
+    newfile_cities= open(r'C:\Users\jacko\Desktop\PythonOOP\Chapter 07\cities.txt', 'r') #r before the absolute path means we dont have to escape the backlashes.
+
+    #read file
+    contents_cities= newfile_cities.readlines()
+
+    #close file
+    newfile_cities.close()
+
+    print(contents_cities)
+
+    #strip the \n from each element with while loop
+    index = 0
+    while index < len(contents_cities):
+        contents_cities[index] = contents_cities[index].rstrip('\n')
+        index +=1
+
+    #print newly fixed list
+    print(contents_cities)
+
+
+
+    
+main()
