@@ -2,9 +2,10 @@ import os
 def main():
 
     try:
-        newfile = open(r'C:\Users\jacko\Desktop\PythonOOP\Chapter 07\charge_accounts.txt', 'r')
+        newfile = open(r'C:\Users\jacko\Desktop\PythonOOP\Chapter 07\charge_accounts.txt', 'r') #An example file path to the file
         contents_newfile = newfile.readlines()
         newfile.close()
+        
         #strip \n
         index =0 
         while index < len(contents_newfile):
@@ -26,6 +27,6 @@ def main():
             print('Number is not valid')
 
     except IOError:
-        print('The number ', user_num, ' is not valid')
+        print('No file found')
 
 
