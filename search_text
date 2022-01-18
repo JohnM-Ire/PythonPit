@@ -1,0 +1,31 @@
+import os
+def main():
+
+    try:
+        newfile = open(r'C:\Users\jacko\Desktop\PythonOOP\Chapter 07\charge_accounts.txt', 'r')
+        contents_newfile = newfile.readlines()
+        newfile.close()
+        #strip \n
+        index =0 
+        while index < len(contents_newfile):
+            contents_newfile[index] = contents_newfile[index].rstrip('\n')
+            index +=1
+
+
+        print(contents_newfile)
+
+        #get the users account number
+    
+        print('Please enter a charge account number')
+        user_num = input()
+
+    
+        if user_num in contents_newfile:
+                print('The number ', user_num, ' is valid', sep='')
+        else:
+            print('Number is not valid')
+
+    except IOError:
+        print('The number ', user_num, ' is not valid')
+
+
