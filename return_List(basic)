@@ -1,0 +1,39 @@
+
+def main():
+
+    #Get a list with values in it
+     numbers = get_values()
+
+     #Display the values in the list
+
+     print('You have entered ', numbers)
+
+def get_values():
+
+    #create empty list
+
+    values= []
+
+    #create var to control the loop
+
+    again = 'Y'
+    while again.upper() == 'Y':
+        #Get a number and add it to the list
+
+        num = int(input('Enter a Number : '))
+
+        values.append(num)
+
+        #Do you want to go again ?
+        print('Do you want to add another number ?')
+
+        again = input('y = yes, anything else = no ')
+
+    #return with the list
+    return values 
+
+
+
+main()
+
+
