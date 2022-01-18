@@ -1,0 +1,16 @@
+import os
+def main():
+    #Create new list
+    beatles = ['John\n', 'Ringo\n', 'George\n', 'John\n']
+
+    #open file to write to
+    outfile = open(r'C:\Users\jacko\Desktop\PythonOOP\beatles.txt', 'w')
+
+    #write list to the file
+    outfile.writelines(beatles)
+
+    #close the file
+    outfile.close()
+
+    
+main()
