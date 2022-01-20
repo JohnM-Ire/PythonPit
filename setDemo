@@ -1,0 +1,63 @@
+#setdemo, This program demonstrates the various set operations
+
+baseball = set(['Jodi', 'Carmen', 'Aida', 'Mary'])
+basketball = set(['Eva', 'Carmen', 'Mary', 'Sarah'])
+
+#Display members of the baseball set
+
+print('The following students are on the Baseball team: ')
+
+for name in baseball:
+    print(name, sep=' ')
+
+#Display members of basketball team
+
+print()
+
+print('The following students are on the basketball team: ')
+
+for name in basketball:
+    print(name)
+
+#demonstrate intersection
+
+print()
+
+print('The following students both play Baseball and Basketball: ')
+
+for name in baseball.intersection(basketball):
+    print(name)
+
+#Demonstrate the Union
+
+print()
+
+print('The students that play either baseball or basketball: ')
+
+for name in baseball.union(basketball):
+    print(name)
+
+print()
+
+#Demonstrate the difference (Students who play basball but not basketball
+
+print('The students that play baseball but not basketball: ')
+for name in baseball.difference(basketball):
+    print(name)
+
+print()
+#Demonstrate the difference (Students who play basketball but not baseball
+
+print('The students that play baseball but not basketball: ')
+for name in basketball.difference(baseball):
+    print(name)
+
+print()
+#Demonstrate symmetric difference
+
+print('The students that play one sport but not both: ')
+for name in baseball.symmetric_difference(basketball):
+    print(name)
+
+
+
