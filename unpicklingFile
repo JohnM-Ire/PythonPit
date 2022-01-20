@@ -1,0 +1,44 @@
+#THis program demonstrates object unpickling
+
+import pickle
+
+def main():
+
+    end_of_file = False # to indicate end of file
+
+    #open file for Binary Reading
+
+    input_file = open(r'C:\Users\jacko\Desktop\PythonOOP\FILES\info.dat', 'rb')
+
+    #Read to end of file
+    while not end_of_file:
+
+        try:
+            #unpickle the next object
+
+            person= pickle.load(input_file)
+
+            #Display the object
+            display_data(person)
+
+        except EOFError:
+
+            #Set flag to indicate end of file
+
+            end_of_file= True
+
+    #close file
+    input_file.close()
+
+#The display data function displays the person data in the deictionary that is passed as an argument
+
+def display_data(person):
+
+    print('Name : ', person['name'])
+    print('Age : ', person['age'])
+    print('Weight : ', person['weight'])
+    print()
+
+main()
+
+
