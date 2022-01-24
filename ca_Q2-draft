@@ -7,16 +7,36 @@ def main():
     
     index =0
     newfile = open(r'C:\Users\jacko\Desktop\PythonOOP\FILES\macbeth.txt', 'r')
+   
     for line in newfile:
+        print('line#',index,' ',line)
+
         word_list.append(line.split())
         index +=1
+        for word in line.strip().split():
+            print(word)
+            if word in word_check:
+                word_check[word].append(index +1)
+            elif word not in word_check:
+                word_check[word]= [index +1]
 
+    for key, value in word_check.items():
+        print(key, value)
     
 
+    #print('word_list= ',word_list)
+
+    #for line in newfile:
+        #for word in set(word_list):
+            #word_check.setdefault(word, []).append(line +1)
+
+    #print(word_check)
+        
     
-    for i in range(len(word_list)):
-        print('Line:',i+1, word_list[i])
-        print()
+    #for i in range(len(word_list)):
+        #print('Line:',i+1, word_list[i])
+        #print()
+        #if 
      
         #for word in word_list:
             #print(word[])
