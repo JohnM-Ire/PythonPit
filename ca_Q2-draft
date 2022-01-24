@@ -1,0 +1,79 @@
+
+import os
+
+def main():
+    word_check={}
+    word_list=[]
+    
+    index =0
+    newfile = open(r'C:\Users\jacko\Desktop\PythonOOP\FILES\macbeth.txt', 'r')
+    for line in newfile:
+        word_list.append(line.split())
+        index +=1
+
+    
+
+    
+    for i in range(len(word_list)):
+        print('Line:',i+1, word_list[i])
+        print()
+     
+        #for word in word_list:
+            #print(word[])
+            #print()
+            
+            #if word in word_check:
+                #word_check[word] = [i +1]
+            #elif word not in word_check:
+                #word_check[word].append(i+1)
+
+    #print(word_check)
+
+
+
+
+        
+
+
+
+
+
+
+
+
+    #open and read the file in
+    #newfile = open(r'C:\Users\jacko\Desktop\PythonOOP\FILES\macbeth.txt', 'r')
+
+    ##words = newfile.read()
+    #file_contents = newfile.readlines()
+
+    #print(file_contents)
+
+
+    #newfile.close()
+    ###words.split()
+
+    ###print(words)
+
+    ##strip new line(\n)
+    #index =0 
+    #while index < len(file_contents):
+    #    file_contents[index] = file_contents[index].rstrip('\n')
+    #    index +=1
+
+    #index = 1
+    #for line in file_contents:
+    #    word_lines[index] = line
+    #    index+=1
+
+    #print(word_lines)
+
+
+
+   
+
+
+   
+
+
+main()
