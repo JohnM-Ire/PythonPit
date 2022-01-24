@@ -2,27 +2,46 @@
 import os
 
 def main():
+   
+    #create empty dictionary to hold words(keys) and values(line numbers)
     word_check={}
-    word_list=[]
-    
-    index =0
+
+    line_count =0
+
+
     newfile = open(r'C:\Users\jacko\Desktop\PythonOOP\FILES\macbeth.txt', 'r')
    
+    # for loop to iterate through each line in the text
     for line in newfile:
-        print('line#',index,' ',line)
+        #convert all lines to lower case to avoid duplication of words later on such as if and If
+        line= line.lower()
+        print('line#',line_count,' ',line)
 
-        word_list.append(line.split())
-        index +=1
-        for word in line.strip().split():
+        #word_list.append(line.split())
+
+        #everytime the for line loop iterates (the loop moves to the next line) index is increased by one to track which line is currently in use.
+        line_count +=1
+
+        #for loop to iterate through every word in every line, line is being split into the individual words with .split().
+        for word in line.split():
             print(word)
+            #checking if the current word is a key in dictionary word_check
             if word in word_check:
-                word_check[word].append(index +1)
+
+                #if word is in dictionary then add(append) the index value to the value (line for loop iteration which will correspond with line number)
+                word_check[word].append(line_count)
+
+                #if the word is not a key in dictionary word_check
             elif word not in word_check:
-                word_check[word]= [index +1]
+
+                #if word not in dictionary, add it as a key and enter the current index value as the first value ( which matches line number)
+                word_check[word]= [line_count]
 
     for key, value in word_check.items():
         print(key, value)
     
+    
+
 
     #print('word_list= ',word_list)
 
